@@ -1,6 +1,6 @@
 import { WeatherDataType } from '@/app/weatherData.type'
 import Image from 'next/image'
-import UnknownWeather from '../../../public/unknown-weather.svg'
+import UnknownWeather from '../../../../public/unknown-weather.svg'
 const fetchData = async () => {
 	const API_KEY: string = '485589c5ce3b49e2a1d182121242805'
 	const URL: string = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=Kyiv&days=7&aqi=yes&alerts=no`
@@ -51,7 +51,8 @@ export default async function City({
 			</div>
 			<div className='flex flex-row items-center justify-center'>
 				{data.forecast.forecastday[0].hour.map((hour, key) => (
-					<div key={key} className='flex flex-col items-center'>
+					<div key={key} className='flex flex-col items-center m-1'>
+						<h1>{hour.time.slice(10)}</h1>
 						<Image
 							src={`http:${hour.condition.icon}`}
 							alt={hour.condition.text}

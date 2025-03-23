@@ -12,6 +12,7 @@ export type HourType = {
 	last_updated_epoch: number
 	pressure_mb: number
 	temp_c: number
+	time: string
 	uv: number
 	vis_km: number
 	wind_degree: number
